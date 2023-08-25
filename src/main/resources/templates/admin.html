@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Админка</title>
+</head>
+<body>
+<h3>Личный кабинет Администратора</h3>
+<br>
+<form method="POST" action="/logout">
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+    <button type="submit">Выйти из личного кабинета</button>
+</form>
+</body>
+</html>
