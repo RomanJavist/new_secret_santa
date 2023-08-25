@@ -1,5 +1,6 @@
 package com.example.secret_santa.services;
 
+import com.example.secret_santa.enums.Role;
 import com.example.secret_santa.models.Person;
 import com.example.secret_santa.repositories.PersonRepository;
 import jakarta.transaction.Transactional;
@@ -26,7 +27,7 @@ public class PersonService {
     @Transactional
     public void register(Person person){
         person.setPassword(passwordEncoder.encode(person.getPassword()));
-        person.setRole("ROLE_USER");
+        person.setRole(Role.USER);
         personRepository.save(person);
     }
 }
